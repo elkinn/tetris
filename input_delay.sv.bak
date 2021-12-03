@@ -1,0 +1,52 @@
+module input_delay(input logic clk, reset,
+						 input logic [7:0] in,
+						 output logic [7:0] out
+);
+	
+	enum logic [2:0] {out, h0, h1, h2, h3, h4, h5, h6} state, next_state;
+	
+	
+	
+	always_ff @ (posedge clk)
+	begin
+		if (reset) 
+			state <= keycode;
+		else 
+			state <= next_state;
+	end
+	
+	always_comb
+	begin
+		
+		next_state = state;
+		
+		unique case(state)
+		
+				keycode:
+					next_state = zero0;
+				zero0:
+					next_state = zero1;
+				zero1:
+					next_state = zero2;
+				zero2:
+					next_state = zero3;
+				zero3:
+					next_state = zero4;
+				zero4:
+					next_state = keycode;
+				zero5:
+					next_state = zero6;
+				zero6:
+					next_state = keycode;
+		endcase
+					
+		case(state)
+		keycode:
+			out = in;
+		zero0, zero1, zero2, zero3, zero4, zero5, zero6:
+			out = 8'h00;
+		endcase
+
+
+	end
+endmodule 

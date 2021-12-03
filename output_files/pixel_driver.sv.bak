@@ -1,0 +1,7 @@
+module border_driver(input  logic [9:0] DrawX,
+													 DrawY,
+							output logic [3:0] red,
+													 green,
+													 blue
+);
+							
