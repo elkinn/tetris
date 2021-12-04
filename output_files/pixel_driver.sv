@@ -26,7 +26,7 @@ module pixel_driver(input  logic        pixel_clk, isFalling,
 
 	always_ff @ (posedge pixel_clk)
 	begin
-		if((DrawX >= 237 && DrawX <= 238 && DrawY >= 58 && DrawY <= 381) || (DrawX >= 400 && DrawX <= 401 && DrawY >= 58 && DrawY <= 381)
+		if((DrawX >= 237 && DrawX <= 239 && DrawY >= 58 && DrawY <= 381) || (DrawX >= 399 && DrawX <= 401 && DrawY >= 58 && DrawY <= 381)
 			 || (DrawY >= 58 && DrawY <= 59 && DrawX >= 237 && DrawX <= 401) || (DrawY >= 380 && DrawY <= 381 && DrawX >= 237 && DrawX <= 401))
 		begin
 			red <= 4'b1111;

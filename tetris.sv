@@ -47,14 +47,16 @@ module tetris(
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
-	logic SPI0_CS_N, SPI0_SCLK, SPI0_MISO, SPI0_MOSI, USB_GPX, USB_IRQ, USB_RST, pixel_clk, blank, sync, vs, isFalling;
+	logic SPI0_CS_N, SPI0_SCLK, SPI0_MISO, SPI0_MOSI, USB_GPX, USB_IRQ, USB_RST, pixel_clk, blank, sync, vs, isFalling, isStopped, isLocking, clearing, stopFalling, spawnSignal;
+	logic c0, c1, c2, c3, c4, c5, c6, c7, c8, c9;
 	logic [3:0] hex_num_4, hex_num_3, hex_num_1, hex_num_0, red, green, blue; //4 bit input hex digits
 	logic [1:0] signs;
 	logic [1:0] hundreds;
-	logic [7:0] keycode;
+	logic [7:0] keycode, keycode_i;
 	logic [9:0] DrawX, DrawY;
 	logic [4:0] x0, x1, x2, x3;
 	logic [5:0] y0, y1, y2, y3;
+	logic [9:0] lineFill;
 	logic [9:0] board [20];
 
 //=======================================================
@@ -96,6 +98,7 @@ module tetris(
 	assign {Reset_h}=~ (KEY[0]); 
 	
 	assign VGA_VS = vs;
+	assign keycode_i = keycode;
 	
 	//remember to rename the SOC as necessary
 	tetris_soc u0 (
@@ -137,8 +140,11 @@ module tetris(
 	 );
 	 
 	vga_controller vga0 (.Clk(MAX10_CLK1_50), .Reset(Reset_h), .hs(VGA_HS), .vs(vs), .pixel_clk(pixel_clk), .blank(blank), .sync(sync), .DrawX(DrawX), .DrawY(DrawY));
-	game_logic g0 (.clk(MAX10_CLK1_50), .reset(Reset_h), .keycode_i(keycode), .*);
-	pixel_driver p0 (.pixel_clk(pixel_clk), .DrawX(DrawX), .DrawY(DrawY), .red(VGA_R), .green(VGA_G), .blue(VGA_V), .x0(x0), .x1(x1), .x2(x2), 
+	pixel_driver p0 (.pixel_clk(pixel_clk), .DrawX(DrawX), .DrawY(DrawY), .red(VGA_R), .green(VGA_G), .blue(VGA_B), .x0(x0), .x1(x1), .x2(x2), 
 							.x3(x3), .y0(y0), .y1(y1), .y2(y2), .y3(y3), .isFalling(isFalling), .board(board));
+							
+	game_logic g0 (.clk(MAX10_CLK1_50), .reset(Reset_h), .*);
+	falling_piece fp0 (.clk(MAX10_CLK1_50), .reset(spawnSignal), .*);
+	board_memory bm0 (.clk(MAX10_CLK1_50), .reset(Reset_h), .*);
 	 
 endmodule

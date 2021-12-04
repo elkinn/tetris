@@ -1,33 +1,26 @@
 
-State Machine - |tetris|game_logic:g0|shape_reg
-Name shape_reg.0111 shape_reg.0110 shape_reg.0101 shape_reg.0100 shape_reg.0011 shape_reg.0010 shape_reg.0001 shape_reg.0000 
-shape_reg.0000 0 0 0 0 0 0 0 0 
-shape_reg.0001 0 0 0 0 0 0 1 1 
-shape_reg.0010 0 0 0 0 0 1 0 1 
-shape_reg.0011 0 0 0 0 1 0 0 1 
-shape_reg.0100 0 0 0 1 0 0 0 1 
-shape_reg.0101 0 0 1 0 0 0 0 1 
-shape_reg.0110 0 1 0 0 0 0 0 1 
-shape_reg.0111 1 0 0 0 0 0 0 1 
+State Machine - |tetris|falling_piece:fp0|input_delay:i0|curr_state
+Name curr_state.h4 curr_state.h3 curr_state.h2 curr_state.h1 curr_state.h0 curr_state.keycode 
+curr_state.keycode 0 0 0 0 0 0 
+curr_state.h0 0 0 0 0 1 1 
+curr_state.h1 0 0 0 1 0 1 
+curr_state.h2 0 0 1 0 0 1 
+curr_state.h3 0 1 0 0 0 1 
+curr_state.h4 1 0 0 0 0 1 
 
 State Machine - |tetris|game_logic:g0|curr_state
-Name curr_state.stopped curr_state.falling curr_state.spawn_Z curr_state.spawn_S curr_state.spawn_L curr_state.spawn_J curr_state.spawn_T curr_state.spawn_O curr_state.spawn_I curr_state.idle 
-curr_state.idle 0 0 0 0 0 0 0 0 0 0 
-curr_state.spawn_I 0 0 0 0 0 0 0 0 1 1 
-curr_state.spawn_O 0 0 0 0 0 0 0 1 0 1 
-curr_state.spawn_T 0 0 0 0 0 0 1 0 0 1 
-curr_state.spawn_J 0 0 0 0 0 1 0 0 0 1 
-curr_state.spawn_L 0 0 0 0 1 0 0 0 0 1 
-curr_state.spawn_S 0 0 0 1 0 0 0 0 0 1 
-curr_state.spawn_Z 0 0 1 0 0 0 0 0 0 1 
-curr_state.falling 0 1 0 0 0 0 0 0 0 1 
-curr_state.stopped 1 0 0 0 0 0 0 0 0 1 
-
-State Machine - |tetris|game_logic:g0|board_memory:bm0|curr_state
-Name curr_state.idle curr_state.lock2 curr_state.lock1 
-curr_state.idle 0 0 0 
-curr_state.lock1 1 0 1 
-curr_state.lock2 1 1 0 
+Name curr_state.clear4 curr_state.clear3 curr_state.clear2 curr_state.clear1 curr_state.clear0 curr_state.lc curr_state.locked curr_state.stopped curr_state.falling curr_state.spawn curr_state.idle 
+curr_state.idle 0 0 0 0 0 0 0 0 0 0 0 
+curr_state.spawn 0 0 0 0 0 0 0 0 0 1 1 
+curr_state.falling 0 0 0 0 0 0 0 0 1 0 1 
+curr_state.stopped 0 0 0 0 0 0 0 1 0 0 1 
+curr_state.locked 0 0 0 0 0 0 1 0 0 0 1 
+curr_state.lc 0 0 0 0 0 1 0 0 0 0 1 
+curr_state.clear0 0 0 0 0 1 0 0 0 0 0 1 
+curr_state.clear1 0 0 0 1 0 0 0 0 0 0 1 
+curr_state.clear2 0 0 1 0 0 0 0 0 0 0 1 
+curr_state.clear3 0 1 0 0 0 0 0 0 0 0 1 
+curr_state.clear4 1 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |tetris|game_logic:g0|input_delay:i0|curr_state
 Name curr_state.h4 curr_state.h3 curr_state.h2 curr_state.h1 curr_state.h0 curr_state.keycode 
