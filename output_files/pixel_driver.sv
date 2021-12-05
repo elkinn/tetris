@@ -3,6 +3,7 @@ module pixel_driver(input  logic        pixel_clk, isFalling,
 						  input  logic [9:0]  y0, y1, y2, y3,
 						  input  logic [9:0]  DrawX,
 													 DrawY,
+						  input  logic [3:0]  shape,
 						  input  logic [9:0]  board [20],
 						  output logic [3:0]  red,
 													 green,
@@ -29,6 +30,7 @@ module pixel_driver(input  logic        pixel_clk, isFalling,
 		if((DrawX >= 237 && DrawX <= 239 && DrawY >= 58 && DrawY <= 381) || (DrawX >= 399 && DrawX <= 401 && DrawY >= 58 && DrawY <= 381)
 			 || (DrawY >= 58 && DrawY <= 59 && DrawX >= 237 && DrawX <= 401) || (DrawY >= 380 && DrawY <= 381 && DrawX >= 237 && DrawX <= 401))
 		begin
+			/* background color */
 			red <= 4'b1111;
 			green <= 4'b1111;
 			blue <= 4'b1111;
@@ -39,29 +41,144 @@ module pixel_driver(input  logic        pixel_clk, isFalling,
 			if( (DrawX > DrawX0 && DrawX < (DrawX0 + 16) && DrawY < DrawY0 && DrawY > (DrawY0 - 16)) || (DrawX > DrawX1 && DrawX < (DrawX1 + 16) && DrawY < DrawY1 && DrawY > (DrawY1 - 16))
 			 || (DrawX > DrawX2 && DrawX < (DrawX2 + 16) && DrawY < DrawY2 && DrawY > (DrawY2 - 16)) || (DrawX > DrawX3 && DrawX < (DrawX3 + 16) && DrawY < DrawY3 && DrawY > (DrawY3 - 16))) 
 			begin
+				/* background color */
 				red <= 4'b1111;
 				green <= 4'b1111;
 				blue <= 4'b1111;
 			end
 			else if(draw)
 			begin
+				/* background color */
 				red <= 4'b1111;
 				green <= 4'b1111;
 				blue <= 4'b1111;
 			end
 			else
 			begin
-				red <= 4'b0000;
-				green <= 4'b0000;
-				blue <= 4'b0000;
+				/* shape color */
+
+				/* color table from lab 7
+					{"black",          0x0, 0x0, 0x0},
+					{"blue",           0x0, 0x0, 0xa},
+					{"green",          0x0, 0xa, 0x0},
+					{"cyan",           0x0, 0xa, 0xa},
+					{"red",            0xa, 0x0, 0x0},
+					{"magenta",        0xa, 0x0, 0xa},
+					{"brown",          0xa, 0x5, 0x0},
+					{"light gray",     0xa, 0xa, 0xa},
+					{"dark gray",      0x5, 0x5, 0x5},
+					{"light blue",     0x5, 0x5, 0xf},
+					{"light green",    0x5, 0xf, 0x5},
+					{"light cyan",     0x5, 0xf, 0xf},
+					{"light red",      0xf, 0x5, 0x5},
+					{"light magenta",  0xf, 0x5, 0xf},
+					{"yellow",         0xf, 0xf, 0x5},
+					{"white",          0xf, 0xf, 0xf}
+				*/
+
+				/* I shape color: cyan */
+				if (shape == 3'b000)
+				begin
+					red <= 4'b0000;
+					green <= 4'b1010;
+					blue <= 4'b1010;
+				end
+				/* O shape color: yellow */
+				if (shape == 3'b001)
+				begin
+					red <= 4'b1111;
+					green <= 4'b1111;
+					blue <= 4'b0101;
+				end
+				/* T shape color: magenta */
+				if (shape == 3'b010)
+				begin
+					red <= 4'b1010;
+					green <= 4'b0000;
+					blue <= 4'b1010;
+				end
+				/* J shape color: blue */
+				if (shape == 3'b011)
+				begin
+					red <= 4'b0000;
+					green <= 4'b0000;
+					blue <= 4'b1111;
+				end
+				/* L shape color: brown */
+				if (shape == 3'b100)
+				begin
+					red <= 4'b0101;
+					green <= 4'b0101;
+					blue <= 4'b0000;
+				end
+				/* S shape color: light green */
+				if (shape == 3'b101)
+				begin
+					red <= 4'b0101;
+					green <= 4'b1111;
+					blue <= 4'b0101;
+				end
+				/* Z shape color: red */
+				if (shape == 3'b110)
+				begin
+					red <= 4'b1010;
+					green <= 4'b0000;
+					blue <= 4'b0000;
+				end
 			end
 		end
 		
 		else
 		begin
-			red <= 4'b0000;
-			green <= 4'b0000;
-			blue <= 4'b0000;
+			/* I shape color: cyan */
+			if (shape == 3'b000)
+			begin
+				red <= 4'b0000;
+				green <= 4'b1010;
+				blue <= 4'b1010;
+			end
+			/* O shape color: yellow */
+			if (shape == 3'b001)
+			begin
+				red <= 4'b1111;
+				green <= 4'b1111;
+				blue <= 4'b0101;
+			end
+			/* T shape color: magenta */
+			if (shape == 3'b010)
+			begin
+				red <= 4'b1010;
+				green <= 4'b0000;
+				blue <= 4'b1010;
+			end
+			/* J shape color: blue */
+			if (shape == 3'b011)
+			begin
+				red <= 4'b0000;
+				green <= 4'b0000;
+				blue <= 4'b1111;
+			end
+			/* L shape color: brown */
+			if (shape == 3'b100)
+			begin
+				red <= 4'b0101;
+				green <= 4'b0101;
+				blue <= 4'b0000;
+			end
+			/* S shape color: light green */
+			if (shape == 3'b101)
+			begin
+				red <= 4'b0101;
+				green <= 4'b1111;
+				blue <= 4'b0101;
+			end
+			/* Z shape color: red */
+			if (shape == 3'b110)
+			begin
+				red <= 4'b1010;
+				green <= 4'b0000;
+				blue <= 4'b0000;
+			end
 		end
 		
 	end

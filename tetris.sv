@@ -58,6 +58,7 @@ module tetris(
 	logic [5:0] y0, y1, y2, y3;
 	logic [9:0] lineFill;
 	logic [9:0] board [20];
+	logic [3:0] shape;
 
 //=======================================================
 //  Structural coding

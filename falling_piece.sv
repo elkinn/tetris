@@ -1,12 +1,13 @@
 module falling_piece(input  logic clk, vs, reset, isFalling, isStopped, spawnSignal, clearing,
 							input  logic [7:0] keycode_i,
 							input  logic [9:0] board [20],
-						   output logic [4:0] x0, x1, x2, x3,
-							output logic [5:0] y0, y1, y2, y3
+						    output logic [4:0] x0, x1, x2, x3,
+							output logic [5:0] y0, y1, y2, y3,
+							output logic [3:0] shape
 );
 	int counter, x0shift, y0shift, x1shift, y1shift, x2shift, y2shift, x3shift, y3shift, orientation, rotate;
 	logic [2:0] lsfr0, lsfr1, lsfr2;
-	logic [3:0] shape, shapeReg;
+	logic [3:0] shapeReg;
 	logic [7:0] keycode;
 	
 	input_delay i0 (.clk(vs), .reset(reset), .in(keycode_i), .out(keycode));
