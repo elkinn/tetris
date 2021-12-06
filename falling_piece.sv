@@ -5,14 +5,11 @@ module falling_piece(input  logic clk, vs, reset, isFalling, isStopped, spawnSig
 							output logic [5:0] y0, y1, y2, y3
 );
 	int counter, x0shift, y0shift, x1shift, y1shift, x2shift, y2shift, x3shift, y3shift, orientation, rotate;
-	logic [2:0] lsfr0, lsfr1, lsfr2;
-	logic [3:0] shape, shapeReg;
+	logic [3:0] shape, shapeReg, lsfr0;
 	logic [7:0] keycode;
 	
 	input_delay i0 (.clk(vs), .reset(reset), .in(keycode_i), .out(keycode));
 	LSFR l0 (.clk(clk), .rst(reset), .d(lsfr0));
-	LSFR l1 (.clk(clk), .rst(reset), .d(lsfr1));
-	LSFR l2 (.clk(clk), .rst(reset), .d(lsfr2));
 	
 	always_ff @(posedge vs)
 	begin
@@ -189,7 +186,8 @@ module falling_piece(input  logic clk, vs, reset, isFalling, isStopped, spawnSig
 	
 	always_comb
 	begin
-		shape = {lsfr2[0],lsfr1[0],lsfr0[0]};
+		if(lsfr0[2:0] == 3'b111) shape = {1'b0,lsfr0[1:0]};
+		else shape = lsfr0[2:0];
 		x0shift = 0;
 		x1shift = 0;
 		x2shift = 0;

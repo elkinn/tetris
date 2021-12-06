@@ -1,5 +1,5 @@
 Timing Analyzer report for tetris
-Fri Dec 03 21:26:29 2021
+Sun Dec 05 19:12:04 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -94,14 +94,13 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 2.88        ;
+; Average used               ; 2.81        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  17.2%      ;
-;     Processor 3            ;  17.1%      ;
-;     Processors 4-12        ;  17.1%      ;
+;     Processor 2            ;  16.5%      ;
+;     Processors 3-12        ;  16.4%      ;
 +----------------------------+-------------+
 
 
@@ -110,9 +109,9 @@ refer to the applicable agreement for further details.
 +------------------------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                                ; Status ; Read at                  ;
 +------------------------------------------------------------------------------+--------+--------------------------+
-; tetris_soc/synthesis/submodules/altera_reset_controller.sdc                  ; OK     ; Fri Dec 03 21:26:25 2021 ;
-; tetris_soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc ; OK     ; Fri Dec 03 21:26:25 2021 ;
-; tetris_soc/synthesis/submodules/tetris_soc_nios2_gen2_0_cpu.sdc              ; OK     ; Fri Dec 03 21:26:25 2021 ;
+; tetris_soc/synthesis/submodules/altera_reset_controller.sdc                  ; OK     ; Sun Dec 05 19:12:00 2021 ;
+; tetris_soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc ; OK     ; Sun Dec 05 19:12:00 2021 ;
+; tetris_soc/synthesis/submodules/tetris_soc_nios2_gen2_0_cpu.sdc              ; OK     ; Sun Dec 05 19:12:00 2021 ;
 +------------------------------------------------------------------------------+--------+--------------------------+
 
 
@@ -125,13 +124,13 @@ refer to the applicable agreement for further details.
 +---------------------+------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------------+
 
 
-+---------------------------------------------------------+
-; Slow 1200mV 85C Model Fmax Summary                      ;
-+----------+-----------------+---------------------+------+
-; Fmax     ; Restricted Fmax ; Clock Name          ; Note ;
-+----------+-----------------+---------------------+------+
-; 52.1 MHz ; 52.1 MHz        ; altera_reserved_tck ;      ;
-+----------+-----------------+---------------------+------+
++----------------------------------------------------------+
+; Slow 1200mV 85C Model Fmax Summary                       ;
++-----------+-----------------+---------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
++-----------+-----------------+---------------------+------+
+; 51.46 MHz ; 51.46 MHz       ; altera_reserved_tck ;      ;
++-----------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -140,7 +139,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 40.403 ; 0.000         ;
+; altera_reserved_tck ; 40.284 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -149,7 +148,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.324 ; 0.000         ;
+; altera_reserved_tck ; 0.294 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -158,7 +157,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 47.259 ; 0.000         ;
+; altera_reserved_tck ; 48.044 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -167,7 +166,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 1.328 ; 0.000         ;
+; altera_reserved_tck ; 1.183 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -176,7 +175,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+--------------------+
 ; Clock               ; Slack  ; End Point TNS      ;
 +---------------------+--------+--------------------+
-; altera_reserved_tck ; 49.538 ; 0.000              ;
+; altera_reserved_tck ; 49.543 ; 0.000              ;
 +---------------------+--------+--------------------+
 
 
@@ -189,7 +188,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 4
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.500
-Worst Case Available Settling Time: 197.137 ns
+Worst Case Available Settling Time: 196.922 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -203,7 +202,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +-----------+-----------------+---------------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name          ; Note ;
 +-----------+-----------------+---------------------+------+
-; 55.58 MHz ; 55.58 MHz       ; altera_reserved_tck ;      ;
+; 56.04 MHz ; 56.04 MHz       ; altera_reserved_tck ;      ;
 +-----------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -213,7 +212,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 41.004 ; 0.000         ;
+; altera_reserved_tck ; 41.078 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -222,7 +221,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.306 ; 0.000         ;
+; altera_reserved_tck ; 0.290 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -231,7 +230,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 47.466 ; 0.000         ;
+; altera_reserved_tck ; 48.236 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -240,7 +239,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 1.239 ; 0.000         ;
+; altera_reserved_tck ; 1.091 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -249,7 +248,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; altera_reserved_tck ; 49.550 ; 0.000             ;
+; altera_reserved_tck ; 49.551 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -262,7 +261,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 4
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.500
-Worst Case Available Settling Time: 197.400 ns
+Worst Case Available Settling Time: 197.210 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -276,7 +275,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 46.019 ; 0.000         ;
+; altera_reserved_tck ; 46.008 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -285,7 +284,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.122 ; 0.000         ;
+; altera_reserved_tck ; 0.109 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -294,7 +293,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 48.950 ; 0.000         ;
+; altera_reserved_tck ; 49.379 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -303,7 +302,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.570 ; 0.000         ;
+; altera_reserved_tck ; 0.503 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -312,7 +311,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; altera_reserved_tck ; 49.394 ; 0.000             ;
+; altera_reserved_tck ; 49.396 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -325,7 +324,7 @@ Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Number of Synchronizer Chains Found: 4
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 0.500
-Worst Case Available Settling Time: 198.808 ns
+Worst Case Available Settling Time: 198.730 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -339,8 +338,8 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +----------------------+--------+-------+----------+---------+---------------------+
 ; Clock                ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack     ; 40.403 ; 0.122 ; 47.259   ; 0.570   ; 49.394              ;
-;  altera_reserved_tck ; 40.403 ; 0.122 ; 47.259   ; 0.570   ; 49.394              ;
+; Worst-case Slack     ; 40.284 ; 0.109 ; 48.044   ; 0.503   ; 49.396              ;
+;  altera_reserved_tck ; 40.284 ; 0.109 ; 48.044   ; 0.503   ; 49.396              ;
 ; Design-wide TNS      ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  altera_reserved_tck ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
 +----------------------+--------+-------+----------+---------+---------------------+
@@ -960,7 +959,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 6624     ; 0        ; 90       ; 3        ;
+; altera_reserved_tck ; altera_reserved_tck ; 6627     ; 0        ; 90       ; 3        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -970,7 +969,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+----------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+----------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 6624     ; 0        ; 90       ; 3        ;
+; altera_reserved_tck ; altera_reserved_tck ; 6627     ; 0        ; 90       ; 3        ;
 +---------------------+---------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1320,7 +1319,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Fri Dec 03 21:26:23 2021
+    Info: Processing started: Sun Dec 05 19:11:58 2021
 Info: Command: quartus_sta tetris -c tetris
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Default" -- entity does not exist in design
@@ -1402,7 +1401,7 @@ Warning (18236): Number of processors has not been specified which may cause ove
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): The Timing Analyzer is analyzing 45 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Warning (335093): The Timing Analyzer is analyzing 2 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Info (332164): Evaluating HDL-embedded SDC commands
     Info (332165): Entity alt_jtag_atlantic
         Info (332166): set_false_path -from [get_registers {*|alt_jtag_atlantic:*|jupdate}] -to [get_registers {*|alt_jtag_atlantic:*|jupdate1*}] 
@@ -1439,234 +1438,14 @@ Info (332164): Evaluating HDL-embedded SDC commands
 Info (332104): Reading SDC File: 'tetris_soc/synthesis/submodules/altera_reset_controller.sdc'
 Info (332104): Reading SDC File: 'tetris_soc/synthesis/submodules/altera_avalon_st_handshake_clock_crosser.sdc'
 Info (332104): Reading SDC File: 'tetris_soc/synthesis/submodules/tetris_soc_nios2_gen2_0_cpu.sdc'
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x1[4]~2|combout"
-    Warning (332126): Node "fp0|Selector5~0|datad"
-    Warning (332126): Node "fp0|Selector5~0|combout"
-    Warning (332126): Node "fp0|x1[4]~2|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x0[4]~2|combout"
-    Warning (332126): Node "fp0|Selector0~0|datac"
-    Warning (332126): Node "fp0|Selector0~0|combout"
-    Warning (332126): Node "fp0|x0[4]~2|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x2[4]~2|combout"
-    Warning (332126): Node "fp0|Selector10~0|datac"
-    Warning (332126): Node "fp0|Selector10~0|combout"
-    Warning (332126): Node "fp0|x2[4]~2|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x3[4]~2|combout"
-    Warning (332126): Node "fp0|Selector15~0|datad"
-    Warning (332126): Node "fp0|Selector15~0|combout"
-    Warning (332126): Node "fp0|x3[4]~2|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x1[0]~18|combout"
-    Warning (332126): Node "fp0|Selector9~0|datac"
-    Warning (332126): Node "fp0|Selector9~0|combout"
-    Warning (332126): Node "fp0|x1[0]~18|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x1[1]~14|combout"
-    Warning (332126): Node "fp0|Selector8~0|datad"
-    Warning (332126): Node "fp0|Selector8~0|combout"
-    Warning (332126): Node "fp0|x1[1]~14|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x1[2]~10|combout"
-    Warning (332126): Node "fp0|Selector7~0|datac"
-    Warning (332126): Node "fp0|Selector7~0|combout"
-    Warning (332126): Node "fp0|x1[2]~10|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x1[3]~6|combout"
-    Warning (332126): Node "fp0|Selector6~0|datac"
-    Warning (332126): Node "fp0|Selector6~0|combout"
-    Warning (332126): Node "fp0|x1[3]~6|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y1[3]~10|combout"
-    Warning (332126): Node "fp0|Selector28~0|datac"
-    Warning (332126): Node "fp0|Selector28~0|combout"
-    Warning (332126): Node "fp0|y1[3]~10|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y1[5]~2|combout"
-    Warning (332126): Node "fp0|Selector26~0|datac"
-    Warning (332126): Node "fp0|Selector26~0|combout"
-    Warning (332126): Node "fp0|y1[5]~2|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y1[0]~22|combout"
-    Warning (332126): Node "fp0|Selector31~0|datad"
-    Warning (332126): Node "fp0|Selector31~0|combout"
-    Warning (332126): Node "fp0|y1[0]~22|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y1[1]~18|combout"
-    Warning (332126): Node "fp0|Selector30~0|datac"
-    Warning (332126): Node "fp0|Selector30~0|combout"
-    Warning (332126): Node "fp0|y1[1]~18|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y1[2]~14|combout"
-    Warning (332126): Node "fp0|Selector29~0|datac"
-    Warning (332126): Node "fp0|Selector29~0|combout"
-    Warning (332126): Node "fp0|y1[2]~14|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y0[5]~2|combout"
-    Warning (332126): Node "fp0|Selector20~0|datac"
-    Warning (332126): Node "fp0|Selector20~0|combout"
-    Warning (332126): Node "fp0|y0[5]~2|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y2[5]~2|combout"
-    Warning (332126): Node "fp0|Selector32~0|datad"
-    Warning (332126): Node "fp0|Selector32~0|combout"
-    Warning (332126): Node "fp0|y2[5]~2|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y1[4]~6|combout"
-    Warning (332126): Node "fp0|Selector27~0|datac"
-    Warning (332126): Node "fp0|Selector27~0|combout"
-    Warning (332126): Node "fp0|y1[4]~6|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y3[5]~2|combout"
-    Warning (332126): Node "fp0|Selector38~0|datad"
-    Warning (332126): Node "fp0|Selector38~0|combout"
-    Warning (332126): Node "fp0|y3[5]~2|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x3[0]~18|combout"
-    Warning (332126): Node "fp0|Selector19~0|datac"
-    Warning (332126): Node "fp0|Selector19~0|combout"
-    Warning (332126): Node "fp0|x3[0]~18|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y3[4]~6|combout"
-    Warning (332126): Node "fp0|Selector39~0|datac"
-    Warning (332126): Node "fp0|Selector39~0|combout"
-    Warning (332126): Node "fp0|y3[4]~6|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y3[3]~10|combout"
-    Warning (332126): Node "fp0|Selector40~0|datad"
-    Warning (332126): Node "fp0|Selector40~0|combout"
-    Warning (332126): Node "fp0|y3[3]~10|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y3[0]~22|combout"
-    Warning (332126): Node "fp0|Selector43~0|datac"
-    Warning (332126): Node "fp0|Selector43~0|combout"
-    Warning (332126): Node "fp0|y3[0]~22|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y3[1]~18|combout"
-    Warning (332126): Node "fp0|Selector42~0|datad"
-    Warning (332126): Node "fp0|Selector42~0|combout"
-    Warning (332126): Node "fp0|y3[1]~18|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y3[2]~14|combout"
-    Warning (332126): Node "fp0|Selector41~0|datad"
-    Warning (332126): Node "fp0|Selector41~0|combout"
-    Warning (332126): Node "fp0|y3[2]~14|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x3[1]~14|combout"
-    Warning (332126): Node "fp0|Selector18~0|datac"
-    Warning (332126): Node "fp0|Selector18~0|combout"
-    Warning (332126): Node "fp0|x3[1]~14|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x3[3]~6|combout"
-    Warning (332126): Node "fp0|Selector16~0|datac"
-    Warning (332126): Node "fp0|Selector16~0|combout"
-    Warning (332126): Node "fp0|x3[3]~6|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x3[2]~10|combout"
-    Warning (332126): Node "fp0|Selector17~0|datad"
-    Warning (332126): Node "fp0|Selector17~0|combout"
-    Warning (332126): Node "fp0|x3[2]~10|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y0[3]~10|combout"
-    Warning (332126): Node "fp0|Selector22~0|datad"
-    Warning (332126): Node "fp0|Selector22~0|combout"
-    Warning (332126): Node "fp0|y0[3]~10|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y0[2]~14|combout"
-    Warning (332126): Node "fp0|Selector23~0|datad"
-    Warning (332126): Node "fp0|Selector23~0|combout"
-    Warning (332126): Node "fp0|y0[2]~14|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y0[1]~18|combout"
-    Warning (332126): Node "fp0|Selector24~0|datac"
-    Warning (332126): Node "fp0|Selector24~0|combout"
-    Warning (332126): Node "fp0|y0[1]~18|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y0[0]~22|combout"
-    Warning (332126): Node "fp0|Selector25~0|datad"
-    Warning (332126): Node "fp0|Selector25~0|combout"
-    Warning (332126): Node "fp0|y0[0]~22|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x0[1]~14|combout"
-    Warning (332126): Node "fp0|Selector3~0|datac"
-    Warning (332126): Node "fp0|Selector3~0|combout"
-    Warning (332126): Node "fp0|x0[1]~14|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x0[0]~18|combout"
-    Warning (332126): Node "fp0|Selector4~0|datac"
-    Warning (332126): Node "fp0|Selector4~0|combout"
-    Warning (332126): Node "fp0|x0[0]~18|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x0[2]~10|combout"
-    Warning (332126): Node "fp0|Selector2~0|datac"
-    Warning (332126): Node "fp0|Selector2~0|combout"
-    Warning (332126): Node "fp0|x0[2]~10|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x0[3]~6|combout"
-    Warning (332126): Node "fp0|Selector1~0|datac"
-    Warning (332126): Node "fp0|Selector1~0|combout"
-    Warning (332126): Node "fp0|x0[3]~6|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y0[4]~6|combout"
-    Warning (332126): Node "fp0|Selector21~0|datad"
-    Warning (332126): Node "fp0|Selector21~0|combout"
-    Warning (332126): Node "fp0|y0[4]~6|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y2[3]~10|combout"
-    Warning (332126): Node "fp0|Selector34~0|datad"
-    Warning (332126): Node "fp0|Selector34~0|combout"
-    Warning (332126): Node "fp0|y2[3]~10|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y2[1]~18|combout"
-    Warning (332126): Node "fp0|Selector36~0|datad"
-    Warning (332126): Node "fp0|Selector36~0|combout"
-    Warning (332126): Node "fp0|y2[1]~18|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x2[3]~6|combout"
-    Warning (332126): Node "fp0|Selector11~0|datad"
-    Warning (332126): Node "fp0|Selector11~0|combout"
-    Warning (332126): Node "fp0|x2[3]~6|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y2[0]~22|combout"
-    Warning (332126): Node "fp0|Selector37~0|datac"
-    Warning (332126): Node "fp0|Selector37~0|combout"
-    Warning (332126): Node "fp0|y2[0]~22|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x2[2]~10|combout"
-    Warning (332126): Node "fp0|Selector12~0|datac"
-    Warning (332126): Node "fp0|Selector12~0|combout"
-    Warning (332126): Node "fp0|x2[2]~10|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x2[1]~14|combout"
-    Warning (332126): Node "fp0|Selector13~0|datad"
-    Warning (332126): Node "fp0|Selector13~0|combout"
-    Warning (332126): Node "fp0|x2[1]~14|datad"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|x2[0]~18|combout"
-    Warning (332126): Node "fp0|Selector14~0|datac"
-    Warning (332126): Node "fp0|Selector14~0|combout"
-    Warning (332126): Node "fp0|x2[0]~18|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y2[2]~14|combout"
-    Warning (332126): Node "fp0|Selector35~0|datac"
-    Warning (332126): Node "fp0|Selector35~0|combout"
-    Warning (332126): Node "fp0|y2[2]~14|datac"
-Warning (332125): Found combinational loop of 4 nodes File: C:/intelFPGA_lite/18.1/ece385/tetris/falling_piece.sv Line: 113
-    Warning (332126): Node "fp0|y2[4]~6|combout"
-    Warning (332126): Node "fp0|Selector33~0|datad"
-    Warning (332126): Node "fp0|Selector33~0|combout"
-    Warning (332126): Node "fp0|y2[4]~6|datad"
 Warning (332060): Node: MAX10_CLK1_50 was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register tetris_soc:u0|tetris_soc_sdram:sdram|m_addr[0] is being clocked by MAX10_CLK1_50
 Warning (332060): Node: vga_controller:vga0|vs was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][0] is being clocked by vga_controller:vga0|vs
+    Info (13166): Register sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][4] is being clocked by vga_controller:vga0|vs
 Warning (332060): Node: vga_controller:vga0|clkdiv was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register vga_controller:vga0|vs is being clocked by vga_controller:vga0|clkdiv
 Warning (332060): Node: game_logic:g0|curr_state.spawn was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch falling_piece:fp0|y3[4]~5 is being clocked by game_logic:g0|curr_state.spawn
+    Info (13166): Latch falling_piece:fp0|x0[1]~5 is being clocked by game_logic:g0|curr_state.spawn
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
@@ -1679,26 +1458,26 @@ Critical Warning (332168): The following clock transfers have no clock uncertain
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
-Info (332146): Worst-case setup slack is 40.403
+Info (332146): Worst-case setup slack is 40.284
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    40.403               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.324
+    Info (332119):    40.284               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.294
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.324               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 47.259
+    Info (332119):     0.294               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 48.044
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    47.259               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 1.328
+    Info (332119):    48.044               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 1.183
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.328               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 49.538
+    Info (332119):     1.183               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.543
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.538               0.000 altera_reserved_tck 
+    Info (332119):    49.543               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 4 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1706,7 +1485,7 @@ Info (332114): Report Metastability: Found 4 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 4
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.500
-    Info (332114): Worst Case Available Settling Time: 197.137 ns
+    Info (332114): Worst Case Available Settling Time: 196.922 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -1718,11 +1497,11 @@ Info (334004): Delay annotation completed successfully
 Warning (332060): Node: MAX10_CLK1_50 was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register tetris_soc:u0|tetris_soc_sdram:sdram|m_addr[0] is being clocked by MAX10_CLK1_50
 Warning (332060): Node: vga_controller:vga0|vs was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][0] is being clocked by vga_controller:vga0|vs
+    Info (13166): Register sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][4] is being clocked by vga_controller:vga0|vs
 Warning (332060): Node: vga_controller:vga0|clkdiv was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register vga_controller:vga0|vs is being clocked by vga_controller:vga0|clkdiv
 Warning (332060): Node: game_logic:g0|curr_state.spawn was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch falling_piece:fp0|y3[4]~5 is being clocked by game_logic:g0|curr_state.spawn
+    Info (13166): Latch falling_piece:fp0|x0[1]~5 is being clocked by game_logic:g0|curr_state.spawn
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
@@ -1732,26 +1511,26 @@ Critical Warning (332168): The following clock transfers have no clock uncertain
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Rise) (setup and hold)
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Fall) (setup and hold)
     Critical Warning (332169): From altera_reserved_tck (Fall) to altera_reserved_tck (Fall) (setup and hold)
-Info (332146): Worst-case setup slack is 41.004
+Info (332146): Worst-case setup slack is 41.078
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    41.004               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.306
+    Info (332119):    41.078               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.290
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.306               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 47.466
+    Info (332119):     0.290               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 48.236
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    47.466               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 1.239
+    Info (332119):    48.236               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 1.091
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     1.239               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 49.550
+    Info (332119):     1.091               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.551
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.550               0.000 altera_reserved_tck 
+    Info (332119):    49.551               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 4 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1759,7 +1538,7 @@ Info (332114): Report Metastability: Found 4 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 4
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.500
-    Info (332114): Worst Case Available Settling Time: 197.400 ns
+    Info (332114): Worst Case Available Settling Time: 197.210 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -1769,11 +1548,11 @@ Info: Analyzing Fast 1200mV 0C Model
 Warning (332060): Node: MAX10_CLK1_50 was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register tetris_soc:u0|tetris_soc_sdram:sdram|m_addr[0] is being clocked by MAX10_CLK1_50
 Warning (332060): Node: vga_controller:vga0|vs was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][0] is being clocked by vga_controller:vga0|vs
+    Info (13166): Register sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|cells[1][4] is being clocked by vga_controller:vga0|vs
 Warning (332060): Node: vga_controller:vga0|clkdiv was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register vga_controller:vga0|vs is being clocked by vga_controller:vga0|clkdiv
 Warning (332060): Node: game_logic:g0|curr_state.spawn was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Latch falling_piece:fp0|y3[4]~5 is being clocked by game_logic:g0|curr_state.spawn
+    Info (13166): Latch falling_piece:fp0|x0[1]~5 is being clocked by game_logic:g0|curr_state.spawn
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: altera_internal_jtag  from: tck  to: tckutap
 Warning (332056): PLL cross checking found inconsistent PLL clock settings:
@@ -1783,26 +1562,26 @@ Critical Warning (332168): The following clock transfers have no clock uncertain
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Rise) (setup and hold)
     Critical Warning (332169): From altera_reserved_tck (Rise) to altera_reserved_tck (Fall) (setup and hold)
     Critical Warning (332169): From altera_reserved_tck (Fall) to altera_reserved_tck (Fall) (setup and hold)
-Info (332146): Worst-case setup slack is 46.019
+Info (332146): Worst-case setup slack is 46.008
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    46.019               0.000 altera_reserved_tck 
-Info (332146): Worst-case hold slack is 0.122
+    Info (332119):    46.008               0.000 altera_reserved_tck 
+Info (332146): Worst-case hold slack is 0.109
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.122               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 48.950
+    Info (332119):     0.109               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 49.379
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    48.950               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.570
+    Info (332119):    49.379               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.503
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.570               0.000 altera_reserved_tck 
-Info (332146): Worst-case minimum pulse width slack is 49.394
+    Info (332119):     0.503               0.000 altera_reserved_tck 
+Info (332146): Worst-case minimum pulse width slack is 49.396
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    49.394               0.000 altera_reserved_tck 
+    Info (332119):    49.396               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 4 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
@@ -1810,7 +1589,7 @@ Info (332114): Report Metastability: Found 4 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 4
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.500
-    Info (332114): Worst Case Available Settling Time: 198.808 ns
+    Info (332114): Worst Case Available Settling Time: 198.730 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
@@ -1818,9 +1597,9 @@ Info (332114): Report Metastability: Found 4 synchronizer chains.
     Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 330 warnings
-    Info: Peak virtual memory: 4994 megabytes
-    Info: Processing ended: Fri Dec 03 21:26:29 2021
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 110 warnings
+    Info: Peak virtual memory: 4991 megabytes
+    Info: Processing ended: Sun Dec 05 19:12:04 2021
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:14
 
