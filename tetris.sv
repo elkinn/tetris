@@ -58,6 +58,7 @@ module tetris(
 	logic [5:0] y0, y1, y2, y3;
 	logic [9:0] lineFill;
 	logic [9:0] board [20];
+	logic [3:0] shape;
 
 //=======================================================
 //  Structural coding
@@ -99,7 +100,7 @@ module tetris(
 	
 	assign VGA_VS = vs;
 	assign keycode_i = keycode;
-	
+//	input_delay i0 (.clk(vs), .reset(reset), .in(keycode_i), .out(keycode));
 	//remember to rename the SOC as necessary
 	tetris_soc u0 (
 		.clk_clk                           (MAX10_CLK1_50),    //clk.clk
@@ -141,7 +142,7 @@ module tetris(
 	 
 	vga_controller vga0 (.Clk(MAX10_CLK1_50), .Reset(Reset_h), .hs(VGA_HS), .vs(vs), .pixel_clk(pixel_clk), .blank(blank), .sync(sync), .DrawX(DrawX), .DrawY(DrawY));
 	pixel_driver p0 (.pixel_clk(pixel_clk), .DrawX(DrawX), .DrawY(DrawY), .red(VGA_R), .green(VGA_G), .blue(VGA_B), .x0(x0), .x1(x1), .x2(x2), 
-							.x3(x3), .y0(y0), .y1(y1), .y2(y2), .y3(y3), .isFalling(isFalling), .board(board));
+							.x3(x3), .y0(y0), .y1(y1), .y2(y2), .y3(y3), .isFalling(isFalling), .board(board), .shape(shape), .spawnSignal(spawnSignal));
 							
 	game_logic g0 (.clk(MAX10_CLK1_50), .reset(Reset_h), .*);
 	falling_piece fp0 (.clk(MAX10_CLK1_50), .reset(spawnSignal), .*);

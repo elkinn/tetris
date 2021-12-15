@@ -1,12 +1,12 @@
-Power Analyzer Status : Successful - Sun Dec 05 19:11:56 2021
+Power Analyzer Status : Successful - Tue Dec 14 23:27:03 2021
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : tetris
 Top-level Entity Name : tetris
 Family : MAX 10
-Device : 10M50DAF484C7G
+Device : 10M50DAF484C6GES
 Power Models : Final
-Total Thermal Power Dissipation : 107.26 mW
-Core Dynamic Thermal Power Dissipation : 1.76 mW
+Total Thermal Power Dissipation : 107.50 mW
+Core Dynamic Thermal Power Dissipation : 2.01 mW
 Core Static Thermal Power Dissipation : 96.19 mW
 I/O Thermal Power Dissipation : 9.31 mW
 Power Estimation Confidence : Low: user provided insufficient toggle rate data

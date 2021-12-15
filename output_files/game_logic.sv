@@ -6,13 +6,13 @@ module game_logic(input logic        clk, reset, vs, stopFalling, c0, c1, c2, c3
 						output logic [9:0] lineFill
 );
 
-	int counter, shape;
+	int counter;
 	enum logic [3:0] {idle, spawn, falling, stopped, locked, lc, clear0, clear1, clear2, clear3, clear4} 
 						   curr_state, next_state;
-	logic [3:0] lsfr0, lsfr1, lsfr2;
+//	logic [3:0] lsfr0, lsfr1, lsfr2;
 	logic [7:0] keycode;
-	
-	input_delay i0 (.clk(vs), .reset(reset), .in(keycode_i), .out(keycode));
+//	assign keycode = keycode_i; 
+	input_delay i0 (.clk(clk), .reset(reset), .in(keycode_i), .out(keycode));
 							
 	always_ff @ (posedge clk or posedge reset)
 	begin
@@ -28,32 +28,34 @@ module game_logic(input logic        clk, reset, vs, stopFalling, c0, c1, c2, c3
 
 	always_comb
 	begin
-		next_state = curr_state;
+//		next_state = curr_state;
 		unique case (curr_state)
 			idle:
 			begin
-				if(keycode == 8'b00101000) next_state = spawn;
-				else next_state = idle;
+				if (keycode==8'b00001100 || keycode==8'b00010010|| keycode==8'b00010111||keycode==8'b00001101||keycode==8'b00001111||keycode==8'b00010110||keycode==8'b00011101)
+				next_state = spawn;
+				else
+				next_state = idle;
 			end
 			spawn: next_state = falling;
 			falling:
 			begin
-				if(stopFalling) next_state = stopped;
+				if(stopFalling==1'b1) next_state = stopped;
 				else next_state = falling;
 			end
 			stopped:
 			begin
-				if(counter == 100000000) next_state = locked;
-				else next_state = stopped;
+				next_state = locked;
+				
 			end
 			locked:
 			begin
-				next_state = lc;
+				next_state = idle;
 			end
 			lc:
 			begin
 				if(c0 || c1 || c2 || c3 || c4 || c5 || c6 || c7 || c8 || c9) next_state = clear0;
-				else next_state = spawn;
+				else next_state = idle;
 			end
 			clear0:
 			begin
@@ -87,17 +89,25 @@ module game_logic(input logic        clk, reset, vs, stopFalling, c0, c1, c2, c3
 		isStopped = 0;
 		isLocking  = 0;
 		spawnSignal = 0;
-		shape = 0;
 		clearing = 0;
 		
-		case (curr_state)
-			spawn: spawnSignal = 1;
-			falling: isFalling = 1;
-			stopped, lc: isStopped = 1;
+		unique case (curr_state)
+			spawn: 
+			begin
+			spawnSignal = 1;
+			end
+			falling: 
+			begin
+			isFalling = 1;
+			end
+			stopped, lc: 
+			begin
+			isStopped = 1;
+			isLocking = 1;
+			end
 			locked:
 			begin
 				isStopped = 1;
-				isLocking = 1;
 			end
 			clear0, clear1, clear2, clear3, clear4: 
 			begin

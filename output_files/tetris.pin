@@ -65,7 +65,7 @@
  ---------------------------------------------------------------------------------
 
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-CHIP  "tetris"  ASSIGNED TO AN: 10M50DAF484C7G
+CHIP  "tetris"  ASSIGNED TO AN: 10M50DAF484C6GES
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------

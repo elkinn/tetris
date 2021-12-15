@@ -1,5 +1,5 @@
 Assembler report for tetris
-Sun Dec 05 19:11:49 2021
+Tue Dec 14 23:26:54 2021
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -11,7 +11,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/intelFPGA_lite/18.1/ece385/tetris/output_files/tetris.sof
+  6. Assembler Device Options: C:/Users/sabah/Intel/tetris-main/output_files/tetris.sof
   7. Assembler Messages
 
 
@@ -38,11 +38,11 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Dec 05 19:11:49 2021 ;
+; Assembler Status      ; Successful - Tue Dec 14 23:26:54 2021 ;
 ; Revision Name         ; tetris                                ;
 ; Top-level Entity Name ; tetris                                ;
 ; Family                ; MAX 10                                ;
-; Device                ; 10M50DAF484C7G                        ;
+; Device                ; 10M50DAF484C6GES                      ;
 +-----------------------+---------------------------------------+
 
 
@@ -63,23 +63,23 @@ refer to the applicable agreement for further details.
 +--------+------------------------+--------------+
 
 
-+--------------------------------------------------------------+
-; Assembler Generated Files                                    ;
-+--------------------------------------------------------------+
-; File Name                                                    ;
-+--------------------------------------------------------------+
-; C:/intelFPGA_lite/18.1/ece385/tetris/output_files/tetris.sof ;
-+--------------------------------------------------------------+
++----------------------------------------------------------+
+; Assembler Generated Files                                ;
++----------------------------------------------------------+
+; File Name                                                ;
++----------------------------------------------------------+
+; C:/Users/sabah/Intel/tetris-main/output_files/tetris.sof ;
++----------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/intelFPGA_lite/18.1/ece385/tetris/output_files/tetris.sof ;
-+----------------+-----------------------------------------------------------------------+
-; Option         ; Setting                                                               ;
-+----------------+-----------------------------------------------------------------------+
-; JTAG usercode  ; 0x005E20B1                                                            ;
-; Checksum       ; 0x005E20B1                                                            ;
-+----------------+-----------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/sabah/Intel/tetris-main/output_files/tetris.sof ;
++----------------+-------------------------------------------------------------------+
+; Option         ; Setting                                                           ;
++----------------+-------------------------------------------------------------------+
+; JTAG usercode  ; 0x006CA753                                                        ;
+; Checksum       ; 0x006CA753                                                        ;
++----------------+-------------------------------------------------------------------+
 
 
 +--------------------+
@@ -88,15 +88,15 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sun Dec 05 19:11:44 2021
+    Info: Processing started: Tue Dec 14 23:26:50 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off tetris -c tetris
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4707 megabytes
-    Info: Processing ended: Sun Dec 05 19:11:49 2021
-    Info: Elapsed time: 00:00:05
+    Info: Peak virtual memory: 4709 megabytes
+    Info: Processing ended: Tue Dec 14 23:26:54 2021
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
 

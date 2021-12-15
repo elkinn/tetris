@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/intelFPGA_lite/18.1/ece385/tetris/output_files/") File("tetris.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484ES) Path("C:/Users/sabah/Intel/tetris-main/output_files/") File("tetris.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

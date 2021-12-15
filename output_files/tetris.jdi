@@ -1,9 +1,9 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="8623990557a5b4bc741e"/>
+    <hash md5_digest_80b="18459a9ac8849d3fb424"/>
   </project>
   <file_info>
-    <file device="10M50DAF484C7G" path="tetris.sof" usercode="0xFFFFFFFF"/>
+    <file device="10M50DAF484C6GES" path="tetris.sof" usercode="0xFFFFFFFF"/>
   </file_info>
   <hub_info hub_ir_width="10" ir_width="10" node_addr_width="2" node_count="3"/>
   <node_info>
@@ -143,8 +143,8 @@
         <parameter name="SLD_IP_VERSION" type="dec" value="6"/>
         <parameter name="SLD_IP_MINOR_VERSION" type="dec" value="0"/>
         <parameter name="SLD_COMMON_IP_VERSION" type="dec" value="0"/>
-        <parameter name="sld_data_bits" type="unknown" value="24"/>
-        <parameter name="sld_trigger_bits" type="unknown" value="24"/>
+        <parameter name="sld_data_bits" type="unknown" value="48"/>
+        <parameter name="sld_trigger_bits" type="unknown" value="48"/>
         <parameter name="SLD_NODE_CRC_BITS" type="dec" value="32"/>
         <parameter name="SLD_NODE_CRC_HIWORD" type="dec" value="41394"/>
         <parameter name="SLD_NODE_CRC_LOWORD" type="dec" value="50132"/>
@@ -162,10 +162,10 @@
         <parameter name="SLD_HPS_TRIGGER_OUT_ENABLED" type="dec" value="0"/>
         <parameter name="SLD_HPS_EVENT_ENABLED" type="dec" value="0"/>
         <parameter name="SLD_HPS_EVENT_ID" type="dec" value="0"/>
-        <parameter name="sld_advanced_trigger_entity" type="unknown" value="sld_reserved_tetris_auto_signaltap_0_1_ec00,"/>
+        <parameter name="sld_advanced_trigger_entity" type="unknown" value="sld_reserved_tetris_auto_signaltap_0_1_1594,"/>
         <parameter name="sld_trigger_level_pipeline" type="unknown" value="1"/>
         <parameter name="sld_trigger_pipeline" type="unknown" value="0"/>
-        <parameter name="sld_ram_pipeline" type="unknown" value="0"/>
+        <parameter name="sld_ram_pipeline" type="unknown" value="3"/>
         <parameter name="sld_counter_pipeline" type="unknown" value="0"/>
         <parameter name="sld_enable_advanced_trigger" type="unknown" value="1"/>
         <parameter name="SLD_ADVANCED_TRIGGER_1" type="string" value="NONE"/>
@@ -185,7 +185,7 @@
         <parameter name="sld_state_flow_use_generated" type="unknown" value="0"/>
         <parameter name="sld_current_resource_width" type="unknown" value="1"/>
         <parameter name="sld_attribute_mem_mode" type="unknown" value="OFF"/>
-        <parameter name="sld_storage_qualifier_bits" type="unknown" value="24"/>
+        <parameter name="sld_storage_qualifier_bits" type="unknown" value="48"/>
         <parameter name="SLD_STORAGE_QUALIFIER_GAP_RECORD" type="dec" value="0"/>
         <parameter name="SLD_STORAGE_QUALIFIER_MODE" type="string" value="OFF"/>
         <parameter name="SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION" type="dec" value="0"/>
@@ -202,7 +202,7 @@
   <sld_infos>
     <sld_info hpath="tetris_soc:u0" name="u0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME tetris_soc HAS_SOPCINFO 1 GENERATION_ID 1637090941"/>
+        <assignment_value text="QSYS_NAME tetris_soc HAS_SOPCINFO 1 GENERATION_ID 1639373489"/>
       </assignment_values>
       <parameters/>
     </sld_info>

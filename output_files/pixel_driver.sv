@@ -4,6 +4,8 @@ module pixel_driver(input  logic        pixel_clk, isFalling,
 						  input  logic [9:0]  DrawX,
 													 DrawY,
 						  input  logic [9:0]  board [20],
+						  input  logic [3:0]  shape,
+						  input  logic        spawnSignal,
 						  output logic [3:0]  red,
 													 green,
 													 blue
@@ -23,7 +25,8 @@ module pixel_driver(input  logic        pixel_clk, isFalling,
 	
 	assign gameX = (DrawX - 239) >> 4;
 	assign gameY = (379 - DrawY) >> 4;
-
+	
+	
 	always_ff @ (posedge pixel_clk)
 	begin
 		if((DrawX >= 237 && DrawX <= 239 && DrawY >= 58 && DrawY <= 381) || (DrawX >= 399 && DrawX <= 401 && DrawY >= 58 && DrawY <= 381)
@@ -59,9 +62,65 @@ module pixel_driver(input  logic        pixel_clk, isFalling,
 		
 		else
 		begin
-			red <= 4'b0000;
-			green <= 4'b0000;
-			blue <= 4'b0000;
+			if (spawnSignal)
+	//				red <= 4'b0000;
+	//				green <= 4'b0000;
+	//				blue <= 4'b0000;
+					if (shape==4'b0000) //I
+					begin
+						red <= 4'b0000;
+						green <= 4'b1010;
+						blue <= 4'b1010;
+					end
+					else if (shape==4'b0001) //O
+					begin
+						red <= 4'b1111;
+						green <= 4'b1111;
+						blue <= 4'b0101;
+					end
+					else if (shape==4'b0010)//T
+					begin
+						red <= 4'b1010;
+						green <= 4'b0000;
+						blue <= 4'b1010;
+					end
+					else if (shape==4'b0011)//J
+					begin
+						red <= 4'b0000;
+						green <= 4'b0000;
+						blue <= 4'b1111;
+					end
+					else if (shape==4'b0100)//L
+					begin
+						red <= 4'b0101;
+						green <= 4'b0101;
+						blue <= 4'b0000;
+					end
+					else if (shape==4'b0101)//S
+					begin
+						red <= 4'b0101;
+						green <= 4'b1111;
+						blue <= 4'b0101;
+					end
+					else if (shape==4'b0110)//Z
+					begin
+						red <= 4'b1010;
+						green <= 4'b0000;
+						blue <= 4'b0000;
+					end
+					else
+					begin
+						red <= 4'b0000;
+						green <= 4'b0000;
+						blue <= 4'b0000;
+					end//we never do this
+			else			
+				begin
+					red <= 4'b0000;
+					green <= 4'b0000;
+					blue <= 4'b0000;
+				end//we never do this
+				
 		end
 		
 	end

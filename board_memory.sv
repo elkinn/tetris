@@ -25,6 +25,16 @@ module board_memory(input logic clk, reset, vs, isStopped, isLocking, clearing,
 			board[7] <= 10'b0000000000;
 			board[8] <= 10'b0000000000;
 			board[9] <= 10'b0000000000;
+			board[10] <= 10'b0000000000;
+			board[11] <= 10'b0000000000;
+			board[12] <= 10'b0000000000;
+			board[13] <= 10'b0000000000;
+			board[14] <= 10'b0000000000;
+			board[15] <= 10'b0000000000;
+			board[16] <= 10'b0000000000;
+			board[17] <= 10'b0000000000;
+			board[18] <= 10'b0000000000;
+			board[19] <= 10'b0000000000;
 		end
 		
 		else

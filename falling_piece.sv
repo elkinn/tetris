@@ -1,115 +1,132 @@
-module falling_piece(input  logic clk, vs, reset, isFalling, isStopped, spawnSignal, clearing,
+module falling_piece(input  logic clk, vs, reset, isFalling, isStopped, spawnSignal, clearing, pixel_clk,
 							input  logic [7:0] keycode_i,
 							input  logic [9:0] board [20],
 						   output logic [4:0] x0, x1, x2, x3,
-							output logic [5:0] y0, y1, y2, y3
+							output logic [5:0] y0, y1, y2, y3,
+							output logic [3:0] shape
 );
-	int counter, x0shift, y0shift, x1shift, y1shift, x2shift, y2shift, x3shift, y3shift, orientation, rotate;
-	logic [3:0] shape, shapeReg, lsfr0;
+	int counter, x0shift, y0shift, x1shift, y1shift, x2shift, y2shift, x3shift, y3shift, orientation;
+	logic [3:0] shapeReg, lsfr0;
 	logic [7:0] keycode;
+	logic rotate;
+	assign shapeReg = (shape);
+	input_delay i0 (.clk(clk), .reset(reset), .in(keycode_i), .out(keycode));
+//	LSFR l0 (.clk(clk), .rst(reset), .d(lsfr0));
 	
-	input_delay i0 (.clk(vs), .reset(reset), .in(keycode_i), .out(keycode));
-	LSFR l0 (.clk(clk), .rst(reset), .d(lsfr0));
-	
-	always_ff @(posedge vs)
+	always_ff @(posedge clk)
 	begin
 		if(isFalling)
 		begin
-			if(counter == 30) counter <= 0;
-			else counter <= counter + 1;
+			if(counter == 30000000) counter <= 0;
+			else 
+				counter <= counter + 1;
 		end
 	end
 	
-	always_ff @ (posedge clk or posedge reset)
+	always_ff @(posedge clk or posedge spawnSignal) 
 	begin
-		if(reset)
+		if(spawnSignal)
 		begin
-			shapeReg <= shape;
-			orientation <= 2'b00;
-			unique case (shape)
-				3'b000: //I
-				begin
-					x0 <= 5'b00011;
-					x1 <= 5'b00100;
-					x2 <= 5'b00101;
-					x3 <= 5'b00110;
-					y0 <= 6'b010100;
-					y1 <= 6'b010100;
-					y2 <= 6'b010100;
-					y3 <= 6'b010100;
-				end
-				3'b001: //O
-				begin
-					x0 <= 5'b00100;
-					x1 <= 5'b00100;
-					x2 <= 5'b00101;
-					x3 <= 5'b00101;
-					y0 <= 6'b010100;
-					y1 <= 6'b010101;
-					y2 <= 6'b010100;
-					y3 <= 6'b010101;
-				end
-				3'b010://T
-				begin
-					x0 <= 5'b00011;
-					x1 <= 5'b00100;
-					x2 <= 5'b00100;
-					x3 <= 5'b00101;
-					y0 <= 6'b010100;
-					y1 <= 6'b010100;
-					y2 <= 6'b010101;
-					y3 <= 6'b010100;
-				end
-				3'b011://J
-				begin
-					x0 <= 5'b00011;
-					x1 <= 5'b00011;
-					x2 <= 5'b00100;
-					x3 <= 5'b00101;
-					y0 <= 6'b010101;
-					y1 <= 6'b010100;
-					y2 <= 6'b010100;
-					y3 <= 6'b010100;
-				end
-				3'b100://L
-				begin
-					x0 <= 5'b00011;
-					x1 <= 5'b00100;
-					x2 <= 5'b00101;
-					x3 <= 5'b00101;
-					y0 <= 6'b010100;
-					y1 <= 6'b010100;
-					y2 <= 6'b010100;
-					y3 <= 6'b010101;
-				end
-				3'b101://S
-				begin	
-					x0 <= 5'b00011;
-					x1 <= 5'b00100;
-					x2 <= 5'b00100;
-					x3 <= 5'b00101;
-					y0 <= 6'b010100;
-					y1 <= 6'b010100;
-					y2 <= 6'b010101;
-					y3 <= 6'b010101;
-				end
-				3'b110://Z
-				begin
-					x0 <= 5'b00011;
-					x1 <= 5'b00100;
-					x2 <= 5'b00100;
-					x3 <= 5'b00101;
-					y0 <= 6'b010101;
-					y1 <= 6'b010101;
-					y2 <= 6'b010100;
-					y3 <= 6'b010100;
-				end
-				3'b111:;//we never do this
-			endcase
+			if (keycode==8'b00001100) //I
+			begin
+				x0 <= 5'b00011;
+				x1 <= 5'b00100;
+				x2 <= 5'b00101;
+				x3 <= 5'b00110;
+				y0 <= 6'b010100;
+				y1 <= 6'b010100;
+				y2 <= 6'b010100;
+				y3 <= 6'b010100;
+				shape <= 4'b0000;
+				orientation <= 2'b00;
+			end
+			else if (keycode==8'b00010010) //O
+			begin
+				x0 <= 5'b00100;
+				x1 <= 5'b00100;
+				x2 <= 5'b00101;
+				x3 <= 5'b00101;
+				y0 <= 6'b010100;
+				y1 <= 6'b010101;
+				y2 <= 6'b010100;
+				y3 <= 6'b010101;
+				shape <= 4'b0001;
+				orientation <= 2'b00;
+			end
+			else if (keycode==8'b00010111)//T
+			begin
+				x0 <= 5'b00011;
+				x1 <= 5'b00100;
+				x2 <= 5'b00100;
+				x3 <= 5'b00101;
+				y0 <= 6'b010100;
+				y1 <= 6'b010100;
+				y2 <= 6'b010101;
+				y3 <= 6'b010100;
+				shape <= 4'b0010;
+				orientation <= 2'b00;
+			end
+			else if (keycode==8'b00001111)//J
+			begin
+				x0 <= 5'b00011;
+				x1 <= 5'b00011;
+				x2 <= 5'b00100;
+				x3 <= 5'b00101;
+				y0 <= 6'b010101;
+				y1 <= 6'b010100;
+				y2 <= 6'b010100;
+				y3 <= 6'b010100;
+				shape <= 4'b0011;
+				orientation <= 2'b00;
+			end
+			else if (keycode==8'b00001101)//L
+			begin
+				x0 <= 5'b00011;
+				x1 <= 5'b00100;
+				x2 <= 5'b00101;
+				x3 <= 5'b00101;
+				y0 <= 6'b010100;
+				y1 <= 6'b010100;
+				y2 <= 6'b010100;
+				y3 <= 6'b010101;
+				shape <= 4'b0100;
+				orientation <= 2'b00;
+			end
+			else if (keycode==8'b00010110)//S
+			begin	
+				x0 <= 5'b00011;
+				x1 <= 5'b00100;
+				x2 <= 5'b00100;
+				x3 <= 5'b00101;
+				y0 <= 6'b010100;
+				y1 <= 6'b010100;
+				y2 <= 6'b010101;
+				y3 <= 6'b010101;
+				shape <= 4'b0101;
+				orientation <= 2'b00;
+			end
+			else if (keycode==8'b00011101)//Z
+			begin
+				x0 <= 5'b00011;
+				x1 <= 5'b00100;
+				x2 <= 5'b00100;
+				x3 <= 5'b00101;
+				y0 <= 6'b010101;
+				y1 <= 6'b010101;
+				y2 <= 6'b010100;
+				y3 <= 6'b010100;
+				shape <= 4'b0110;
+				orientation <= 2'b00;
+			end
+//			else
+//			begin
+//				shape <= 4'b1111;
+//				orientation <= 2'b00;
+//			end
 		end
 		else if(isFalling == 1'b1)
 		begin
-			if(counter == 30)
+			if(counter == 30000000)
 			begin
 				x0 <= x0;
 				x1 <= x1;
@@ -186,8 +203,8 @@ module falling_piece(input  logic clk, vs, reset, isFalling, isStopped, spawnSig
 	
 	always_comb
 	begin
-		if(lsfr0[2:0] == 3'b111) shape = {1'b0,lsfr0[1:0]};
-		else shape = lsfr0[2:0];
+//		if(lsfr0[2:0] == 3'b111) shape = {1'b0,lsfr0[1:0]};
+//		else shape = lsfr0[2:0];
 		x0shift = 0;
 		x1shift = 0;
 		x2shift = 0;
@@ -198,7 +215,7 @@ module falling_piece(input  logic clk, vs, reset, isFalling, isStopped, spawnSig
 		y3shift = 0;
 		rotate = 1'b0;
 	
-		if(isFalling)
+		if(isFalling==1'b1)
 		begin
 			unique case(keycode) //apply shifts based on keyboard input (left/right or rotate)
 				8'b01001111:
@@ -221,7 +238,7 @@ module falling_piece(input  logic clk, vs, reset, isFalling, isStopped, spawnSig
 						x3shift = -1;
 					end
 				end
-				8'b01010010://rotate clockwise
+				8'b00010101://rotate clockwise
 				begin
 					rotate = 1'b1;
 					unique case (shapeReg)

@@ -1,0 +1,6 @@
+19:12:01 **** Clean-only build of configuration Nios II for project tetri ****
+make clean 
+[tetri clean complete]
+
+19:12:01 Build Finished (took 321ms)
+

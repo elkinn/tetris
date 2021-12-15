@@ -4,7 +4,6 @@ module input_delay(input logic clk, reset,
 );
 	
 	enum logic [3:0] {keycode, h0, h1, h2, h3, h4} curr_state, next_state;
-	
 	always_ff @ (posedge clk or posedge reset)
 	begin
 		if (reset) 
@@ -27,9 +26,9 @@ module input_delay(input logic clk, reset,
 			h2:
 				next_state = h3;
 			h3:
-				next_state = h4;
+				next_state =h4;
 			h4:
-				next_state = keycode;
+				next_state=keycode;
 		endcase
 					
 		case(curr_state)
